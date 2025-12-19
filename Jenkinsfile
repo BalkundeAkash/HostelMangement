@@ -28,12 +28,13 @@ pipeline {
         }
 
         stage('App Info') {
-            steps {
-                echo '===================================='
-                echo 'Spring Boot App is running!'
-                echo 'URL: http://localhost:8080/hello'
-                echo '===================================='
-            }
-        }
+    steps {
+        echo '===================================='
+        echo 'Spring Boot App is running!'
+        echo 'URL: http://localhost:8080/api/hello'
+        echo '===================================='
+    }
+}
+
     }
 }
