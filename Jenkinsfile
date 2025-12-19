@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.11'
+        jdk 'JDK-17'
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -11,7 +16,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 sh '''
-                echo "Stopping old app (if any)..."
+                echo "Stopping old app (if running)..."
                 pkill -f hostelmanagement || true
 
                 echo "Starting Spring Boot app..."
